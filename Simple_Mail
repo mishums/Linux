@@ -1,0 +1,193 @@
+// simplemail.cpp - a simple email program
+// Name: Marisha Knutson
+// Date: 5/3/2015 
+// Assignment: 6
+
+#!/bin/bash
+
+until ["$userIn" = "j"]
+
+	do
+
+		echo "Welcome to the SimpleMail Email Program!"
+		echo
+		echo "Menu Options"
+		echo "Please Select an option."
+		echo
+		echo
+		echo "Press a to use SimpleMail Email"
+		echo
+		echo "Press b for a list of Users"
+		echo
+		echo "Press c for the Date and Time"
+		echo
+		echo "Press d for the Calendar"
+		echo
+		echo "Press e for the Current Directory Name"
+		echo
+		echo "Press f for the Current Directory Contents"
+		echo
+		echo "Press g to find an IP Address"
+		echo
+		echo "Press h for today's fortune!"
+		echo
+		echo "Press i to display a files contents"
+		echo
+		echo
+		echo "Press j to Exit this menu"
+		echo
+		echo "Press m to show the Menu Options again"
+		echo
+
+		read mOption
+
+		case "$mOption" in
+
+			a|A)
+				echo "Welcome to the SimpleMail Email service!"
+				echo
+				echo "Please enter the content of your message and press <ENTER>:"
+				read $mContent
+				echo
+				echo "Please enter the email address of the recipient and press <ENTER>:"
+				read $mAddress
+				echo
+				echo "Is there a file to be attached to this message? Press Y/N:"
+				read $ATTACH
+				echo
+				
+				If [ "$ATTACH" = "Y"|"y"] 
+				then
+					echo "Please enter the name of the file to be attached:"
+					read $mAttach
+					mail -s "$mContent" "$mAddress"<"$mAttach"
+					echo
+					echo "Your mail will be sent with the attachment."
+					echo
+				
+				else
+					mail -s "$mContent" "$mAddress"
+					echo
+					echo "Your mail will be sent without an attachment."
+					echo
+				fi
+				echo "Select a new option, press j to Exit or m to show the Menu Options"
+				echo
+				;;
+
+
+			b|B)
+				echo "Here is a list of users currently logged on:"
+				w
+				echo
+				echo "Select a new option, press j to Exit or m to show the Menu Options"
+				echo
+				;;
+
+			c|B)
+				echo "The current date and time are below:"
+				date
+				echo
+				echo "Select a new option, press j to Exit or m to show the Menu Options"
+				echo
+				;;
+
+			d|D)
+				echo "Here is the current months calendar:"
+				calendar
+				echo
+				echo "Select a new option, press j to Exit or m to show the Menu Options"
+				echo
+				;;
+			
+			e|E)
+				echo "Here is the name of your current directory:"
+				pwd
+				echo
+				echo "Select a new option, press j to Exit or m to show the Menu Options"
+				echo
+				;;
+
+			f|F)
+				echo "Here is a list of the contents of your current directory:"
+				ls
+				echo
+				echo "Select a new option, press j to Exit or m to show the Menu Options"
+				echo
+				;;
+
+			g|G)
+				echo "Please type the Web Address whose IP Address you" 
+				echo "would like to find, then press <ENTER>"
+				read $mWeb
+				echo
+				echo "Here is the IP Address Information:"
+				nslookup $mWeb
+				echo
+				echo "Select a new option, press j to Exit or m to show the Menu Options"
+				echo
+				;;
+
+			h|H)
+				echo "Here is your fortune for today!"
+				echo
+				fortune
+				echo
+				echo "Select a new option, press j to Exit or m to show the Menu Options"
+				echo
+				;;
+
+			i|I)
+				echo "Please enter the name of the file to be displayed:"
+				read $mFile
+				echo
+				echo "Here is your file:"
+				cat $mFile
+				echo
+				echo "Select a new option, press j to Exit or m to show the Menu Options"
+				echo
+				;;
+				
+
+			j|J)
+				echo "Thank you for using the SimpleMail Email service!
+				userIn = j
+
+			m|M)
+				echo "Menu Options"
+				echo "Please Select an option."
+				echo
+				echo
+				echo "Press a to use SimpleMail Email"
+				echo
+				echo "Press b for a list of Users"
+				echo
+				echo "Press c for the Date and Time"
+				echo
+				echo "Press d for the Calendar"
+				echo
+				echo "Press e for the Current Directory Name"
+				echo
+				echo "Press f for the Current Directory Contents"
+				echo
+				echo "Press g to find an IP Address"
+				echo
+				echo "Press h for today's Fortune!"
+				echo
+				echo "Press i to display a files contents"
+				echo
+				echo
+				echo "Press j to Exit this menu"
+				echo
+				echo "Press m to show the Menu Options again"
+				echo
+				;;
+
+			*) 
+				echo "I'm sorry, that was an invalid selection."
+				echo "Select a valid option, press j to Exit or m to show the Menu Options"
+				;;
+				
+
+esac
+
