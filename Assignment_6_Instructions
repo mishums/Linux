@@ -1,0 +1,76 @@
+Instructions	 
+Assignment 6
+
+Your last assignment will be a shell script similar to this week's assignment. The difference is that you will need to implement several protection features and much more detail on the menu options that will be used on this assignment.
+
+Control structures, loops and a menu system is part of any high level programming language. It allows the program to branch out to different parts depending on a logical decisions. Remember that binary systems have only one outcome (true (1) or false (0))
+
+You will develop a shell script with the case command selecting your favorite unix commands. Please look at your book (page 444). The script command_menu. Your job will be to implement this same program but have a total of 10 commands, plus the *) catch all.
+
+This program will have a menu with 10 commands. Use the commands from the menu below (the implementation is similar to the command_menu script on page 444.
+
+Your menu will be surrounded by a loop, either the until or while loop, so that when one option is concluded it will go back to the main menu until the user selects an option x to exit. Try NOT TO USE THE EXIT command to quit the script, use the proper logic of the loop control to exit the program.
+
+Your first option will be an emailer program. This emailer program will be the automated process of the almost weekly mail -s "......" (The whole code should be in one file, do not call the the program by using ~/emailer.sh from one of the menu options. It will not work for me since I will not have this file called emailer.sh when you submit me the assignment. So, enter the whole program in one file)
+
+THIS TIME Email this assignment to wmorales on the linux system since I will have to run your script. Use the command mail -s "cs140U online - Your Name - Assignment 6" wmorales < menu_script.sh
+
+ALSO, send a copy of the program to wmorales@pcc.edu and place a copy in the assignment dropbox.
+
+Make sure to use proper documentation (comments) on your program and ask questions if you are in doubt about what need to be accomplished and use the discussion board.
+
+Use proper Program Style
+
+Menu example:
+
+wmorales@syccuxfs01:~> bash menu_script.sh
+Command Menu
+
+a. Emailer Program
+b. Users Currently Logged On
+c. Current Date and Time
+d. This months Calendar
+e. name of the Working Directory
+f. Contents of the Working Directory
+g. Find the IP of a Web Address
+h. See your Fortune
+i. Print a file (on the screen)
+j. Exit
+
+Please select a letter:
+
+Here is samples interaction with the emailer portion of the program. There is no need to display the calendar or show a list of available files to attach.
+
+Please select a letter: a (this would go to the option for the emailer program that you created)
+
+Welcome wmorales
+
+Today is: Sat Feb 26 16:23:51 PST 2005
+
+This is this months Calendar:
+
+February 2005
+Su Mo Tu We Th Fr Sa
+1 2 3 4 5
+6 7 8 9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28
+
+
+This program will allow you to send a message,
+with a file attachment, to any selected user.
+
+Please enter the subject of your message and press <enter>: Test message
+
+Please enter the email address of the recipient and hit <enter>:wmorales@pcc.edu
+
+Please enter the file to be attached to this message and press <enter>.
+
+please choose a file: testfile
+
+Then it would got back to the main menu
+
+Assignment 6 explained (You will need quicktime to play this video)
+
+Assignment 6 video explanation
